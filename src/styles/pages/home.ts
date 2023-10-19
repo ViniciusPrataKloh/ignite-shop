@@ -6,7 +6,6 @@ export const HomeContainer = styled('main', {
   width: '100%',
   maxWidth: 'calc(100vw - ((100vw - 1180px) / 2))',
   minHeight: 656,
-  background: 'red'
 })
 
 export const CardProduct = styled('a', {
