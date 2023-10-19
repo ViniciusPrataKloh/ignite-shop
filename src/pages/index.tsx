@@ -6,6 +6,7 @@ import { CardProduct, HomeContainer } from "../styles/pages/home";
 
 import 'keen-slider/keen-slider.min.css';
 
+import Link from "next/link";
 import Stripe from "stripe";
 import { priceFormat } from "../lib/priceFormat";
 
@@ -35,13 +36,16 @@ export default function Home({ products }: HomeProps) {
       {
         products.map((product) => {
           return (
-            <CardProduct className="keen-slider__slide" key={product.id}>
-              <Image src={product.imageUrl} alt="" width={520} height={480} />
-              <footer>
-                <strong>{product.name}</strong>
-                <span>{priceFormat(product.price)}</span>
-              </footer>
-            </CardProduct>)
+            <Link key={product.id} href={`/product/${product.id}`}>
+              <CardProduct className="keen-slider__slide" >
+                <Image src={product.imageUrl} alt="" width={520} height={480} />
+                <footer>
+                  <strong>{product.name}</strong>
+                  <span>{priceFormat(product.price)}</span>
+                </footer>
+              </CardProduct>
+            </Link>
+          )
         })
       }
 
@@ -61,7 +65,6 @@ export const getStaticProps: GetStaticProps = async () => {
     return {
       id: product.id,
       name: product.name,
-      description: product.description,
       imageUrl: product.images[0],
       price: price.unit_amount
     }
