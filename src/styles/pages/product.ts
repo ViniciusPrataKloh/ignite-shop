@@ -64,3 +64,14 @@ export const ProductContent = styled('div', {
     }
   }
 })
+
+// Skeletons
+
+export const ImageContainerSkeletons = styled('div', {
+  width: '100%',
+  maxWidth: 576,
+  height: 'calc(656px - 0.5rem)',
+  background: '$gray800',
+  borderRadius: 8,
+
+})
