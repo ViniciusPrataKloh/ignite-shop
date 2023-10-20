@@ -28,7 +28,7 @@ export default function Product({ product }: ProductProps) {
         return (
             <>
                 <Head>
-                    <title>{product.name} | Ignite Shop</title>
+                    <title>Camiseta | Ignite Shop</title>
                 </Head>
 
                 <ProductContainer>
@@ -65,7 +65,7 @@ export default function Product({ product }: ProductProps) {
     return (
         <>
             <Head>
-                <title>{product.name}</title>
+                <title>Camiseta | Ignite Shop</title>
             </Head>
 
             <ProductContainer>
@@ -92,9 +92,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
     return {
         paths: [
             { params: { id: 'prod_OqfHGMf9gy9Vbt' } },
-            // { params: { id: 'prod_OqfHmYCBD9YLTA' } },
-            // { params: { id: 'prod_OqfGZ9iRo6S3H5' } },
-            // { params: { id: 'prod_OqfFOWaMwCaPCU' } },
         ],
         fallback: true
     }
