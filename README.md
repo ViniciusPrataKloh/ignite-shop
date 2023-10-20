@@ -58,7 +58,7 @@ Você pode visualizar o layout do projeto através [desse link](https://www.figm
 
 ## 🔗 Deploy
 
-Para acessar o deploy do Website da aplicação basta clicar no link a seguir: [Link](https://ignite-shop-kappa.vercel.app/)
+Para acessar o deploy do Website da aplicação basta clicar no link a seguir: [Link](https://ignite-shop-ten-alpha.vercel.app/)
 
 ---
 
