@@ -9,6 +9,7 @@ import 'keen-slider/keen-slider.min.css';
 import Link from "next/link";
 import Stripe from "stripe";
 import { priceFormat } from "../lib/priceFormat";
+import Head from "next/head";
 
 interface HomeProps {
   products: Product[]
@@ -31,25 +32,31 @@ export default function Home({ products }: HomeProps) {
   })
 
   return (
-    <HomeContainer ref={sliderRef} className="keen-slider">
+    <>
+      <Head>
+        <title>Home | Ignite Shop</title>
+      </Head>
 
-      {
-        products.map((product) => {
-          return (
-            <Link key={product.id} href={`/product/${product.id}`} prefetch={false}>
-              <CardProduct className="keen-slider__slide" >
-                <Image src={product.imageUrl} alt="" width={520} height={480} />
-                <footer>
-                  <strong>{product.name}</strong>
-                  <span>{priceFormat(product.price)}</span>
-                </footer>
-              </CardProduct>
-            </Link>
-          )
-        })
-      }
+      <HomeContainer ref={sliderRef} className="keen-slider">
 
-    </HomeContainer>
+        {
+          products.map((product) => {
+            return (
+              <Link key={product.id} href={`/product/${product.id}`} prefetch={false}>
+                <CardProduct className="keen-slider__slide" >
+                  <Image src={product.imageUrl} alt="" width={520} height={480} />
+                  <footer>
+                    <strong>{product.name}</strong>
+                    <span>{priceFormat(product.price)}</span>
+                  </footer>
+                </CardProduct>
+              </Link>
+            )
+          })
+        }
+
+      </HomeContainer>
+    </>
   )
 }
 

@@ -7,6 +7,7 @@ import { stripe } from "../../lib/stripe";
 import { DefaultSkeleton, ImageContainer, ImageSkeletonContainer, InfoSkeletonContainer, ProductContainer, ProductContent, SkeletonItem } from "../../styles/pages/product";
 import { useState } from "react";
 import axios from "axios";
+import Head from "next/head";
 
 interface ProductProps {
     product: {
@@ -25,16 +26,22 @@ export default function Product({ product }: ProductProps) {
 
     if (isFallback) {
         return (
-            <ProductContainer>
-                <ImageSkeletonContainer>
-                    <SkeletonItem />
-                </ImageSkeletonContainer>
-                <InfoSkeletonContainer>
-                    <DefaultSkeleton />
-                    <DefaultSkeleton />
-                    <DefaultSkeleton />
-                </InfoSkeletonContainer>
-            </ProductContainer>
+            <>
+                <Head>
+                    <title>{product.name} | Ignite Shop</title>
+                </Head>
+
+                <ProductContainer>
+                    <ImageSkeletonContainer>
+                        <SkeletonItem />
+                    </ImageSkeletonContainer>
+                    <InfoSkeletonContainer>
+                        <DefaultSkeleton />
+                        <DefaultSkeleton />
+                        <DefaultSkeleton />
+                    </InfoSkeletonContainer>
+                </ProductContainer>
+            </>
         )
     }
 
@@ -56,22 +63,28 @@ export default function Product({ product }: ProductProps) {
     }
 
     return (
-        <ProductContainer>
-            <ImageContainer>
-                <Image src={product.imageUrl} alt="" width={520} height={480} />
-            </ImageContainer>
+        <>
+            <Head>
+                <title>{product.name}</title>
+            </Head>
 
-            <ProductContent>
-                <h1>{product.name}</h1>
-                <span>{priceFormat(product.price)}</span>
+            <ProductContainer>
+                <ImageContainer>
+                    <Image src={product.imageUrl} alt="" width={520} height={480} />
+                </ImageContainer>
 
-                <p>{product.description}</p>
+                <ProductContent>
+                    <h1>{product.name}</h1>
+                    <span>{priceFormat(product.price)}</span>
 
-                <button onClick={handleBuyProduct} disabled={isCreatingCheckoutSession}>
-                    Comprar agora
-                </button>
-            </ProductContent>
-        </ProductContainer>
+                    <p>{product.description}</p>
+
+                    <button onClick={handleBuyProduct} disabled={isCreatingCheckoutSession}>
+                        Comprar agora
+                    </button>
+                </ProductContent>
+            </ProductContainer>
+        </>
     )
 }
 

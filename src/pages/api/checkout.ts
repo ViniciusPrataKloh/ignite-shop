@@ -7,8 +7,6 @@ export default async function handleBuyProduct(request: NextApiRequest, response
 
   const { priceId } = request.body
 
-  console.log(priceId)
-
   if (!priceId) return response.status(400).json({ error: 'Preço não encontrado' })
 
   const successUrl = `${process.env.NEXT_URL}/success?session_id={CHECKOUT_SESSION_ID}`
