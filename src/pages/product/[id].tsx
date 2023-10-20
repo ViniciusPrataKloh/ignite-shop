@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import Stripe from "stripe";
 import { priceFormat } from "../../lib/priceFormat";
 import { stripe } from "../../lib/stripe";
-import { ImageContainer, ImageContainerSkeletons, ProductContainer, ProductContent } from "../../styles/pages/product";
+import { DefaultSkeleton, ImageContainer, ImageSkeletonContainer, InfoSkeletonContainer, ProductContainer, ProductContent, SkeletonItem } from "../../styles/pages/product";
 
 interface ProductProps {
     product: {
@@ -22,8 +22,14 @@ export default function Product({ product }: ProductProps) {
     if (isFallback) {
         return (
             <ProductContainer>
-                <ImageContainerSkeletons>
-                </ImageContainerSkeletons>
+                <ImageSkeletonContainer>
+                    <SkeletonItem />
+                </ImageSkeletonContainer>
+                <InfoSkeletonContainer>
+                    <DefaultSkeleton />
+                    <DefaultSkeleton />
+                    <DefaultSkeleton />
+                </InfoSkeletonContainer>
             </ProductContainer>
         )
     }
@@ -63,7 +69,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps<any, { id: string }> = async ({ params }) => {
     const id = params.id;
 
-    setTimeout(() => { }, 3000);
+    await setTimeout(() => { }, 1000);
 
     const product = await stripe.products.retrieve(id, {
         expand: ['default_price']

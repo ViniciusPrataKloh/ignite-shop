@@ -1,4 +1,4 @@
-import { styled } from "..";
+import { styled, keyframes } from "..";
 
 export const ProductContainer = styled('main', {
   display: 'grid',
@@ -6,7 +6,7 @@ export const ProductContainer = styled('main', {
   alignItems: 'stretch',
   gap: '4rem',
   maxWidth: 1180,
-  margin: '0 auto'
+  margin: '0 auto',
 })
 
 export const ImageContainer = styled('div', {
@@ -65,13 +65,52 @@ export const ProductContent = styled('div', {
   }
 })
 
+
+// Animation Skeleton
+
+const skeletonAnimation = keyframes({
+  "0%": {
+    backgroundPosition: "-200px 0",
+  },
+  "100%": {
+    backgroundPosition: "calc(200px + 100%) 0",
+  },
+})
+
+
 // Skeletons
 
-export const ImageContainerSkeletons = styled('div', {
-  width: '100%',
-  maxWidth: 576,
+export const ImageSkeletonContainer = styled('div', {
+  width: 576,
   height: 'calc(656px - 0.5rem)',
-  background: '$gray800',
+  background: '$gray900',
   borderRadius: 8,
+  padding: '0.25rem',
+})
 
+export const InfoSkeletonContainer = styled('div', {
+  width: 480,
+  background: '$gray900',
+  borderRadius: 8,
+  padding: '2rem',
+
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'space-evenly',
+  gap: 24
+})
+
+export const DefaultSkeleton = styled('div', {
+  background: '$gray800',
+  width: '100%',
+  height: '5%',
+  borderRadius: 8,
+})
+
+export const SkeletonItem = styled("div", {
+  background: '$gray800',
+  width: '100%',
+  height: '100%',
+  borderRadius: 8,
 })
