@@ -1,9 +1,13 @@
 import { Bag } from "phosphor-react";
 import { CartButton } from "./styles"
 
-export default function CartButtonComponent() {
+interface CartButtonProps {
+  variant: 'gray' | 'green'
+}
+
+export default function CartButtonComponent({ variant }: CartButtonProps) {
   return (
-    <CartButton color='gray'>
+    <CartButton color={variant}>
       <Bag size={24} />
     </CartButton>
   )
