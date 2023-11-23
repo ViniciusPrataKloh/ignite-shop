@@ -1,14 +1,18 @@
 import { Bag } from "phosphor-react";
-import { CartButton } from "./styles"
+import { CartButton } from "./styles";
 
-interface CartButtonProps {
-  variant: 'gray' | 'green'
+interface CartButtonProps extends React.HTMLProps<HTMLButtonElement> {
+  variant: 'gray' | 'green',
+  handleOnClick?: (e: any) => void
 }
 
-export default function CartButtonComponent({ variant }: CartButtonProps) {
+export default function CartButtonComponent({ variant, handleOnClick }: CartButtonProps) {
   return (
-    <CartButton color={variant}>
-      <Bag size={24} />
+    <CartButton
+      color={variant}
+      onClick={handleOnClick}
+    >
+      <Bag size={28} />
     </CartButton>
   )
 }

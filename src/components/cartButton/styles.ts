@@ -11,6 +11,10 @@ export const CartButton = styled('button', {
   borderRadius: 8,
   cursor: 'pointer',
 
+  '&:hover': {
+    opacity: 0.8,
+  },
+
   variants: {
     color: {
       gray: {
