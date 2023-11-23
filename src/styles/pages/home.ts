@@ -39,8 +39,19 @@ export const CardProduct = styled('a', {
     backgroundColor: 'rgba(0, 0, 0, 0.6)',
 
     transform: 'translateY(110%)',
-    opacity: 0,
     transition: 'all 0.2s ease-in-out',
+    opacity: 0,
+
+    // pointerEvents: 'none',
+    // cursor: 'default',
+
+    div: {
+      display: 'flex',
+      flexDirection: 'column',
+      // alignItems: 'start',
+      // justifyContent: 'center',
+      gap: 4,
+    },
 
     strong: {
       fontSize: '$lg'
@@ -50,7 +61,7 @@ export const CardProduct = styled('a', {
       fontSize: '$xl',
       fontWeight: 'bold',
       color: '$green300'
-    }
+    },
   },
 
   '&:hover': {
