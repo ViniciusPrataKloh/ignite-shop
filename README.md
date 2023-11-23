@@ -16,8 +16,10 @@
    <img alt="License" src="https://img.shields.io/badge/license-MIT-blue">
 </p>
 
+## 🎥 Preview
+
 <p>
-  <img src="./public/cover.png" alt="cover ignite-shop" />
+  <img src="./public/presentation.gif" alt="cover ignite-shop" />
 </p>
 
 <p align="center">
