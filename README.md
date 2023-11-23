@@ -118,29 +118,12 @@ As seguintes ferramentas foram usadas na construção do projeto:
 -   **[Stitches](https://stitches.dev/)**
 -   **[Axios](https://github.com/axios/axios)**
 -   **[Stripe](https://stripe.com/br)**
-<!-- -   **[Use Shopping Cart](https://useshoppingcart.com/docs)**
 -   **[RadixUI](https://www.radix-ui.com/)**
--   **[Swiper](https://swiperjs.com/)**
--   **[Phosphor-Icons](https://phosphoricons.com/)** -->
+-   **[Phosphor-Icons](https://phosphoricons.com/)**
 
 > Para mais detalhes das dependências gerais da aplicação veja o arquivo  [package.json](https://github.com/ViniciusPrataKloh/ignite-shop/blob/main/package.json)
 
 ---
-<!-- 
-## 👨‍💻 Contribuidores
-
-💜 Um super thanks 👏 para essa galera que fez esse produto sair do campo da ideia e entrar nas lojas de aplicativos :)
-
-<!-- ## 💪 Como contribuir para o projeto
-
-1. Faça um **fork** do projeto.
-2. Crie uma nova branch com as suas alterações: `git checkout -b my-feature`
-3. Salve as alterações e crie uma mensagem de commit contando o que você fez: `git commit -m "feature: My new feature"`
-4. Envie as suas alterações: `git push origin my-feature`
-> Caso tenha alguma dúvida confira este [guia de como contribuir no GitHub](./CONTRIBUTING.md)
-
----
--->
 
 ## ✍ Author
 
